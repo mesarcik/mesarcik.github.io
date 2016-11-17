@@ -5,8 +5,8 @@ a:hover { text-decoration: underline; }
 
 table {border: none;
 vertical-align: top;
-padding-right: 5em;
-padding-left: 5em}
+padding-right: 1em;
+padding-left: 1em}
 
 
 p{ font-size: 1.5em; line-height: 1.4em; color: #333; }
