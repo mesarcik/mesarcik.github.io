@@ -3,6 +3,8 @@ body { margin: 60px auto; width: 70%; }
 a { text-decoration: none; color: #999; }
 a:hover { text-decoration: underline; }
 
+a1 {font-family: 'Helvetica'; font-size: 10em;}
+a1:hover{ text-decoration: underline; }
 
 table {border: none;
 vertical-align: top;
