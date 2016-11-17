@@ -14,7 +14,8 @@ table {font-family: 'Helvetica'}
 li {font-family: 'Helvetica';font-size: 1em}
 p {font-family: 'Helvetica'}
 
-
+h { font-family: 'Helvetica'}
+h1 { font-size: 20em;  }
 
 h1, h2, h3, h4 { font-family: 'Helvetica', 'Arial', 'Sans-Serif'; }
 h1 { font-size: 10em;  }
