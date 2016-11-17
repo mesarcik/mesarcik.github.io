@@ -6,7 +6,7 @@ a:hover { text-decoration: underline; }
 table {border: none;}
 
 
-p, ul,li { font-size: 1.5em; line-height: 1.4em; color: #333; }
+p{ font-size: 1.5em; line-height: 1.4em; color: #333; }
 table {font-family: 'Helvetica'}
 li {font-family: 'Helvetica'}
 p {font-family: 'Helvetica'}
