@@ -1,8 +1,18 @@
 body { margin: 60px auto; width: 70%; }
 
-a { text-decoration: none; color: #999; }
-a:hover { text-decoration: underline; }
-
+a {    text-decoration:none;
+    font-weight:bold;
+}
+a:hover span{
+    text-decoration:underline;            
+}
+a span.caption {
+    color:gray;
+    font-weight:normal;
+}
+a:hover span.caption {
+    text-decoration:none;
+}
 
 table {border: none;
 vertical-align: top;
