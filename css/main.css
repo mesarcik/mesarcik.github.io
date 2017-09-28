@@ -1,5 +1,7 @@
 body { margin: 60px auto; width: 70%; }
 
+a.cv { text-decoration: none; color: #999; }
+a.cv:hover { text-decoration: underline; }
 
 
 table {border: none;
@@ -29,9 +31,8 @@ footer { border-top: 1px solid #d5d5d5; font-size: .8em; }
 /* CV */
 .cv { margin: 0px 0px 60px; }
 .cv h1 { font-size: 10em; color: #000000; }
-/*.cv a  { text-decoration: none; color: #000000; }*/
+.cv a  { text-decoration: none; color: #000000; }
 .cv h2 { font-size: 2em; }
-a.cv:hover{    text-decoration: underline;}
 
  }
 /*.cv address, .cv .download { font-family: 'Helvetica', 'Arial', 'Sans-Serif'; }
