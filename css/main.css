@@ -29,7 +29,7 @@ nav ul li, footer ul li { display: inline; margin-right: 20px; }
 /* BIO */
 .bio { display:flex; flex-direction:row;  }
 img{padding-right:20px; padding-bottom:20px}
-.bio-text{padding-right:75px}
+.bio-text{padding-right:150px}
 
 footer { border-top: 1px solid #d5d5d5; font-size: .8em; }
 
