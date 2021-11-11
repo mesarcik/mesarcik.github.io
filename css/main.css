@@ -27,7 +27,7 @@ nav ul, footer ul { font-size: 1em; font-family: 'Helvetica', 'Arial', 'Sans-Ser
 nav ul li, footer ul li { display: inline; margin-right: 20px; }
 
 /* BIO */
-.bio { display:flex; flex-direction:row; padding-bottom:100px}
+.bio { display:flex; flex-direction:row; padding-bottom:100px; padding-top:75px}
 img{padding-right:20px; padding-bottom:20px; width:50%}
 .bio-text{padding-right:150px}
 
