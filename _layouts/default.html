@@ -1,35 +1,34 @@
 <!DOCTYPE html>
 <html>
+
   <head>
-    <title>Michael Mesarcik</title>
-    
-    <link rel="stylesheet" type="text/css" href="/css/main.css">
-  
+    {% if page.redirect %}<meta http-equiv="refresh" content="3; url={{ site.baseurl | prepend: site.url }}/" />{% endif %}
+    {% include head.html %}
   </head>
 
+  <body class="{% if site.navbar_fixed %}fixed-top-nav{% endif %} {% unless site.footer_fixed %}sticky-bottom-footer{% endunless %}">
 
-  <body>
-    <nav>
-<ul>
-<li><a href="/">Home</a></li>
-<li><a href="/about">About</a></li>
-<li><a href="/publications">Publications</a></li>
-<li><a href="/cv">CV</a></li>
-</ul>
-    </nav>
-<div class="container">
+    <!-- Header -->
 
-  {{ content }}
+    {% include header.html %}
 
-</div>
-  
-  <footer>
-   <ul>
-   <li><a href="mailto:mimesarcik@gmail.com">Email</a></li>
-   <li><a href="https://github.com/mesarcik">Github</a></li>
-   <li><a href="https://scholar.google.com/citations?user=TU0tZQgAAAAJ&hl=en">Google Scholar</a></li>
-   </ul>
-  </footer>
+    <!-- Content -->
+
+    <div class="container mt-5">
+      {{ content }}
+    </div>
+
+    <!-- Footer -->
+
+    {% include footer.html %}
+
   </body>
+
+  {% include scripts/jquery.html %}
+  {% include scripts/bootstrap.html %}
+  {% include scripts/mansory.html %}
+  {% include scripts/misc.html %}
+  {% include scripts/mathjax.html %}
+  {% include scripts/analytics.html %}
 
 </html>
