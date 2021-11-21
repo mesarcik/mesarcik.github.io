@@ -74,37 +74,6 @@ contact_note: >
 google_analytics: UA-XXXXXXXXX # out your google-analytics code
 panelbear_analytics: XXXXXXXXX # panelbear analytics site ID
 
-# -----------------------------------------------------------------------------
-# Blog
-# -----------------------------------------------------------------------------
-
-blog_name: al-folio  # your blog must have a name for it to show up in the nav bar
-blog_description: a simple whitespace theme for academics
-permalink: /blog/:year/:title/
-
-# Pagination
-pagination:
-  enabled: true
-
-# Comments
-disqus_shortname: al-folio # put your disqus shortname
-# https://help.disqus.com/en/articles/1717111-what-s-a-shortname
-
-# -----------------------------------------------------------------------------
-# Collections
-# -----------------------------------------------------------------------------
-
-collections:
-  news:
-    defaults:
-      layout: post
-    output: true
-    permalink: /news/:path/
-  projects:
-    output: true
-    permalink: /projects/:path/
-
-news_limit: 5
 
 # -----------------------------------------------------------------------------
 # Jekyll settings
