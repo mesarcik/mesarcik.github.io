@@ -35,8 +35,13 @@ In this blog post I will document my implementation, experiments and finds of th
 ------
 SimCLR, as suggested in the name is simple and is formulated as follows. Given a batch of $$N$$ samples $$x$$ and two augmentations $$\tau_0,\tau_1$$ drawn from some set of augmentations $$ {\rm T}$$. Then we can obtain 1 positively augmented sample and $$2(N-1)$$ negatively augmented samples such that 
 
-$$\hat{x_i} = t_0(x) \quad \text{and} \quad \hat{x_j} = t_1(x) \quad \text{where} \quad  \tau_0, \tau_1 \sim {\rm T}$$.
+$$\hat{x_i} = t_0(x) \quad \text{and} \quad \hat{x_j} = t_1(x) \quad \text{where} \quad  \tau_0, \tau_1 \sim {\rm T}$$
 
 Using these positively and negatively augmented samples we project them to a latent represenation using encoder $$f()$$. In the case of this blog post we limit ourselves to a ResNet-50, such that
 
-$$ h_i = f(\hat{x_i}) \quad  $$ 
+$$ h_i = f(\hat{x_i}) \quad  and \quad h_j = f(\hat{x_j}) $$
+
+It must be noted that these representations $$h_i$$ and $$h_j$$ are used for the downstream classification tasks, but for training purposes we still need to apply a non-linear MLP. Such that 
+
+   
+$$ h_i = f(\hat{x_i}) \quad  and \quad h_j = f(\hat{x_j}) $$
