@@ -33,5 +33,5 @@ In this blog post I will document my implementation, experiments and finds of th
 
 2.Simple Contrastive Learning 
 ------
-SimCLR, as suggested in the name is simple. It 
+SimCLR, as suggested in the name is simple and is formulated as follows. Given a batch of samples $$\vb{x}$$
 $$mean = \frac{\displaystyle\sum_{i=1}^{n} x_{i}}{n}$$
