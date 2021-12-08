@@ -41,7 +41,7 @@ Using these positively and negatively augmented samples we project them to a lat
 
 $$ h_i = f(\hat{x_i}) \quad  and \quad h_j = f(\hat{x_j}) $$
 
-It must be noted that these representations $$h_i$$ and $$h_j$$ are used for the downstream classification tasks, but for training purposes we still need to apply a non-linear MLP. Such that 
+It must be noted that these representations $$h_i$$ and $$h_j$$ are used for the downstream classification tasks, but for training purposes we still need to apply a non-linear MLP, $$g$$. Such that 
 
    
-$$ h_i = f(\hat{x_i}) \quad  and \quad h_j = f(\hat{x_j}) $$
+$$ z_i = g(h_i) \quad  and \quad z_j = g(h_j) $$
