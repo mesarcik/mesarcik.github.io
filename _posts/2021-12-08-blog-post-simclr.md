@@ -31,5 +31,6 @@ In this blog post I will document my implementation, experiments and finds of th
 	In this work I give a brief introduction into my pytorch implementation of simclr and I try reproduce the Fashion-MNIST (FMNIST) and CIFAR-10 results documented in the paper. This being said, the original publication uses transfer learning to adapt the ImageNet trainined model to CIFAR-10 and FMNIST, however I plan to train on these lower resolution datasets to see if equal performance can be obtained.
 
 
-
-
+2.Simple Contrastive Learning 
+------
+Ignoring a number of details ....
