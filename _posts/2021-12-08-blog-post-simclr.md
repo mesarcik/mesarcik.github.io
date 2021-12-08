@@ -45,3 +45,7 @@ It must be noted that these representations $$h_i$$ and $$h_j$$ are used for the
 
    
 $$ z_i = g(h_i) \quad  and \quad z_j = g(h_j) $$
+
+The final part of the SimCLR training process is the loss function, here a we use a cosine-similarity latent projections $$z_i$$ and $$z_j$$. We then weight it using a modified cross-entropy based soft-max function,
+
+$$ \mathcal{L}_{\text{SimCLR}^{(i,j)}} = $$
