@@ -13,7 +13,7 @@ EDL winter school assignment: reproducing SimCLR
 In this blog post I will document my implementation, experiments and finds of the 2020 paper by Chen et al. called "A Simple Framework for Contrastive Learning of Visual Representations" or in fewer words [SimCLR](https://arxiv.org/pdf/2002.05709.pdf).
 
 
-1. Background to self-supervised contrastive learning 
+1.Background to self-supervised contrastive learning 
 ------
 
 **1.1 What is contrastive learning?**
