@@ -48,4 +48,6 @@ $$ z_i = g(h_i) \quad  and \quad z_j = g(h_j) $$
 
 The final part of the SimCLR training process is the loss function, here a we use a cosine-similarity latent projections $$z_i$$ and $$z_j$$. We then weight it using a modified cross-entropy based soft-max function,
 
-$$ \mathcal{L}_{\text{SimCLR}^{(i,j)}} = -\log \big( \dfrac{}{} \big)$$
+$$ \mathcal{L}_{\text{SimCLR}}^{(i,j)} = -\log \big( \dfrac{exp(sim(z_i,z_j)\t)}{\sum_{k=1}^{2N} exp(sim(z_i, z_k)/t)} \big), \quad i \neq k$$
+
+where t is the temperature variable and sim is the cosine similarity function  
