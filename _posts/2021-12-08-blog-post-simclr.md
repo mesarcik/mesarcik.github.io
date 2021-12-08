@@ -33,5 +33,5 @@ In this blog post I will document my implementation, experiments and finds of th
 
 2.Simple Contrastive Learning 
 ------
-SimCLR, as suggested in the name is simple and is formulated as follows. Given a batch of $$N$$ samples $$x$$ and two augmentations drawn from some set of augmentations $$\tau_0, tau_1 \sim \Tau$$ 
+SimCLR, as suggested in the name is simple and is formulated as follows. Given a batch of $$N$$ samples $$x$$ and two augmentations drawn from some set of augmentations $$\tau_0,\tau_1 \sim {\rm T}$$ 
 $$mean = \frac{\displaystyle\sum_{i=1}^{n} x_{i}}{n}$$
