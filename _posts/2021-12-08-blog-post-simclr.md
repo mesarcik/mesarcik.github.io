@@ -20,7 +20,7 @@ In this blog post I will document my implementation, experiments and finds of th
 	Constrative learning is a representation learning paradigm where the similarities and differences of samples in a dataset are exploited in order to learn more robust represenations of the data. This is done by learning a transformation which maps similar samples close to each other while repelling different samples from one and other. In the past this was often done in a supervised manner using triplet-losses and/or Siamese networks. 
 
 **1.2 What is self-supervised learning?**
-	Self-supervised learning is machine learning 
+	Self-supervised learning is an unsupervised machine learning framwork in which pretext tasks are used as indirect training objectives such that the self-supervised trained methods can be used for downstream tasks. Examples of pretext tasks are [Context Prediction](https://arxiv.org/pdf/1505.05192.pdf) 
 
 
 **1.3 Why then do we care about SimCLR?**
