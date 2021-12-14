@@ -31,7 +31,7 @@ In this blog post I will document my implementation, experiments and findings ob
 
 2.Simple contrastive learning 
 ======
-SimCLR, as suggested in the name is simple and is formulated as follows. Given a batch, $$x$$, of $$N$$ samples and two augmentations $$\tau_0,\tau_1$$ drawn from some set of augmentations $$ {\rm T}$$. Then  
+SimCLR, as suggested in the name is simple and is formulated as follows. Given a batch, $$x$$, of $$N$$ samples and two augmentations $$\tau_0,\tau_1$$ drawn from some set of augmentations $$ {\rm T}$$, then 
 
 $$\hat{x_i} = t_0(x) \quad \text{and} \quad \hat{x_j} = t_1(x) \quad \text{where} \quad  \tau_0, \tau_1 \sim {\rm T}$$
 
