@@ -8,7 +8,7 @@ tags:
   - SimCLR 
 ---
 
-In this blog post I will document my implementation, experiments and findings obtained from the reproduction of the2020 paper by Chen et al. called "A Simple Framework for Contrastive Learning of Visual Representations" or in fewer words [SimCLR](https://arxiv.org/pdf/2002.05709.pdf).
+In this blog post I will document my implementation, experiments and findings obtained from the reproduction of the 2020 paper by Chen et al. entitled "A Simple Framework for Contrastive Learning of Visual Representations" or in fewer words [SimCLR](https://arxiv.org/pdf/2002.05709.pdf).
 
 
 1.Background to self-supervised contrastive learning 
@@ -18,7 +18,7 @@ In this blog post I will document my implementation, experiments and findings ob
 	Constrative learning is a representation learning paradigm where the similarities and differences of samples in a dataset are exploited in order to learn more robust represenations of the data. This is done by learning a transformation which maps similar samples close to each other while repelling different samples from one and other. In the past this was often done in a supervised manner using triplet-losses and/or [Siamese networks](https://arxiv.org/pdf/1412.6622.pdf). One of the long standing problems with constrative learning is the requirement for negative samples, as to find differences between samples we need to know what "difference" is.
 
 **1.2 What is self-supervised learning?**
-	Self-supervised learning is an unsupervised machine learning framwork in which pretext tasks are used as indirect training objectives such that the trained models can be used for downstream tasks. Examples of pretext tasks are [context prediction](https://arxiv.org/pdf/1505.05192.pdf) and [rotation prediction](https://openaccess.thecvf.com/content_CVPR_2019/papers/Feng_Self-Supervised_Representation_Learning_by_Rotation_Feature_Decoupling_CVPR_2019_paper.pdf). In this paradigm, rather than training networks with explicit categorical labels, such as done when training classifiers, we exploit implicitly known similaries in the data, such as predicting whether a particular image is rotated or not. 
+	Self-supervised learning is an unsupervised machine learning framework in which pretext tasks are used as indirect training objectives such that the trained models can be used for downstream tasks. Examples of pretext tasks are [context prediction](https://arxiv.org/pdf/1505.05192.pdf) and [rotation prediction](https://openaccess.thecvf.com/content_CVPR_2019/papers/Feng_Self-Supervised_Representation_Learning_by_Rotation_Feature_Decoupling_CVPR_2019_paper.pdf). In this paradigm, rather than training networks with explicit categorical labels, such as done when training classifiers, we exploit implicitly known similaries in the (augmented) data, such as predicting whether a particular image is rotated or not. 
 
 
 **1.3 Why then do we care about SimCLR?**
