@@ -1,5 +1,5 @@
 ---
-title: 'SimCLR Blog Post'
+title: 'Reproducing SimCLR'
 date: 2021-12-08
 permalink: /posts/2021/12/simclr/
 tags:
@@ -8,13 +8,11 @@ tags:
   - SimCLR 
 ---
 
-EDL winter school assignment: reproducing SimCLR 
-======
 In this blog post I will document my implementation, experiments and finds of the 2020 paper by Chen et al. called "A Simple Framework for Contrastive Learning of Visual Representations" or in fewer words [SimCLR](https://arxiv.org/pdf/2002.05709.pdf).
 
 
 1.Background to self-supervised contrastive learning 
-------
+======
 
 **1.1 What is contrastive learning?**
 	Constrative learning is a representation learning paradigm where the similarities and differences of samples in a dataset are exploited in order to learn more robust represenations of the data. This is done by learning a transformation which maps similar samples close to each other while repelling different samples from one and other. In the past this was often done in a supervised manner using triplet-losses and/or Siamese networks. One of the long standing problems with constrative learning is the requirement for negative samples. 
@@ -32,7 +30,7 @@ In this blog post I will document my implementation, experiments and finds of th
 
 
 2.Simple contrastive learning 
-------
+======
 SimCLR, as suggested in the name is simple and is formulated as follows. Given a batch of $$N$$ samples $$x$$ and two augmentations $$\tau_0,\tau_1$$ drawn from some set of augmentations $$ {\rm T}$$. Then we can obtain 1 positively augmented sample and $$2(N-1)$$ negatively augmented samples such that 
 
 $$\hat{x_i} = t_0(x) \quad \text{and} \quad \hat{x_j} = t_1(x) \quad \text{where} \quad  \tau_0, \tau_1 \sim {\rm T}$$
@@ -53,6 +51,6 @@ where $$t$$ is the temperature variable and $$sim()$$ is the cosine-similarity f
 
 
 3.Experimental setup 
-------
+======
 
 bewhskjfd lk 
