@@ -53,4 +53,22 @@ where $$t$$ is the temperature variable and $$sim()$$ is the cosine-similarity f
 3.Experimental setup 
 ======
 
-bewhskjfd lk 
+Using the pseudo code in the Simclr appendixes we design our augmentation setup as follows: 
+
+
+```
+from torchvision import transforms
+
+color_jitter = transforms.ColorJitter(0.8*s, 0.8*s, 0.8*s, 0.2*s)
+blur = transforms.GaussianBlur((k_size, k_size), sigma=(0.1, 2.0))
+
+data_transforms = transforms.Compose([transforms.RandomResizedCrop(size=size),
+								  transforms.RandomHorizontalFlip(),
+								  transforms.RandomApply([color_jitter], p=0.8),
+								  transforms.RandomGrayscale(p=0.2),
+								  transforms.RandomApply([blur], p=0.5),
+								  transforms.ToTensor()])
+
+```
+
+
