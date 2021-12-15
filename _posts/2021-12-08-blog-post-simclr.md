@@ -78,4 +78,24 @@ data_transforms = transforms.Compose([transforms.RandomResizedCrop(size=size),
 								  transforms.ToTensor()])
 ```
 
+**3.2 Model Specifcation**
+As already mentioned we limit this evaluation to a ResNet18, the key difference in the SimCLR model and the original ResNet is that a non-linear projection head is required as specified in Equation 3. In this case we remove the final fully connected layer of the ResNet to obtain the $$h()$$ projection and then replace it with a fully connected layer and a ReLU activation. This is implemented in pytorch as follows: 
+  
+```python
+import torch.nn as nn
+import torchvision.models as models
 
+class Resnet(nn.Module):
+    def __init__(self, out_dim=128):
+        super(Resnet, self).__init__()
+
+        self.resnet = models.resnet18(pretrained=False, num_classes=out_dim)
+        dim_mlp = self.resnet.fc.in_features
+    
+        self.resnet.fc = nn.Sequential(nn.Linear(dim_mlp, dim_mlp), nn.ReLU(), self.resnet.fc)
+
+
+    def forward(self, x): 
+        return self.resnet(x)
+
+```
