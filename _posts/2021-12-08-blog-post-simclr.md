@@ -52,9 +52,10 @@ where $$t$$ is the temperature variable and $$sim()$$ is the cosine-similarity f
 
 3.Experimental setup 
 ======
-
-Using the pseudo code in the Simclr appendixes we design our augmentation setup as follows: 
-
+In this section I define my pytorch based implementation of SimCLR.
+ 
+**3.1 Data Augmentation**
+The data augmentations are implemented using `torchvision.transforms`. Here we define the augmentations as specified by the appendices of the SimCLR paper, these being  
 
 ```python
 from torchvision import transforms
