@@ -56,7 +56,7 @@ where $$t$$ is the temperature variable and $$sim()$$ is the cosine-similarity f
 Using the pseudo code in the Simclr appendixes we design our augmentation setup as follows: 
 
 
-```
+```python
 from torchvision import transforms
 
 color_jitter = transforms.ColorJitter(0.8*s, 0.8*s, 0.8*s, 0.2*s)
