@@ -137,3 +137,7 @@ for i in range(batch_size):
 	if i ==0: loss = simclr_loss(negative_z_0, negative_z_1, positive_z_0, positive_z_1)
 	else: loss+= simclr_loss(negative_z_0, negative_z_1, positive_z_0, positive_z_1)
 ```
+
+We then iterate over each batch, calculate the similarities and update the weights of the model defined above. For a full overview of the pytorch based implementation please see [the full Github repository](https://github.com/mesarcik/simclr).
+
+
