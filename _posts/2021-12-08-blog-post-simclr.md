@@ -55,7 +55,7 @@ where $$t$$ is the temperature variable and $$sim()$$ is the cosine-similarity f
 In this section I define my pytorch based implementation of SimCLR.
  
 **3.1 Data Augmentation**
-The data augmentations are implemented using `torchvision.transforms`. Here we define the augmentations as specified by the appendices of the SimCLR paper:
+		The data augmentations are implemented using `torchvision.transforms`. Here we define the augmentations as specified by the appendices of the SimCLR paper:
 
 - Randomly cropping and re-sizing to original dimensions
 - Randomly flipping horizontally
@@ -79,9 +79,11 @@ data_transforms = transforms.Compose([transforms.RandomResizedCrop(size=size),
 ```
 
 **3.2 Model Specifcation**
-As already mentioned we limit this evaluation to a ResNet18, the key difference in the SimCLR model and the original ResNet is that a non-linear projection head is required as specified in Equation 3. In this case we remove the final fully connected layer of the ResNet to obtain the $$h()$$ projection and then replace it with a fully connected layer and a ReLU activation. This is implemented in pytorch as follows: 
+		The key difference in the SimCLR model and the original ResNet is that a non-linear projection head is required as specified in Equation 3. In this case we remove the final fully connected layer of the ResNet to obtain the $$h()$$ projection and then replace it with a fully connected layer and a ReLU activation. This is implemented in pytorch as follows: 
   
 ```python
+# adapted from https://github.com/sthalles/SimCLR/blob/master/models/resnet_simclr.py
+
 import torch.nn as nn
 import torchvision.models as models
 
@@ -98,4 +100,40 @@ class Resnet(nn.Module):
     def forward(self, x): 
         return self.resnet(x)
 
+```
+
+**3.3 SimCLR Loss**
+The final part of the implementation is the SimCLR loss. Here we implement the loss function in the most readable, but probably the least efficient way. First, the softmax-based loss is defined below: 
+
+```python
+from torch.nn import CosineSimilarity
+_sim = CosineSimilarity(dim=1, eps=1e-6)
+
+def simclr_loss(negative_z_0, negative_z_1, positive_z_0, positive_z_1):
+    positive = _sim(positive_z_0, positive_z_1)
+    negative = 0
+    for i in range(_batch_size-1):
+        negative += torch.exp(_sim(negative_z_0[i:i+1,:],
+                                   negative_z_1[i:i+1,:])/_t).item()
+
+    loss = -torch.log(torch.exp(positive/_t)/negative)
+    return loss
+
+```
+Here we calculate the cosine similarity of the positive samples and divide this through by the temperature weighted sum of the negative samples. Then using this we index each sub-batch of positive and negative pairs using the `cat` operator, and pass the pairs to the similarity function defined above. 
+
+
+```python
+for i in range(batch_size):
+
+	# the positive pair of augmented 
+	positive_z_0 = z_0[i:i+1,...]
+	positive_z_1 = z_1[i:i+1,...]
+
+	# the negative pair of augmented 
+	negative_z_0 = torch.cat((z_0[:i,...],z_0[i+1:,...]), axis=0)
+	negative_z_1 = torch.cat((z_1[:i,...],z_1[i+1:,...]), axis=0)
+
+	if i ==0: loss = simclr_loss(negative_z_0, negative_z_1, positive_z_0, positive_z_1)
+	else: loss+= simclr_loss(negative_z_0, negative_z_1, positive_z_0, positive_z_1)
 ```
