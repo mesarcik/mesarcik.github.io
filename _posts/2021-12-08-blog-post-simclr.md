@@ -55,7 +55,14 @@ where $$t$$ is the temperature variable and $$sim()$$ is the cosine-similarity f
 In this section I define my pytorch based implementation of SimCLR.
  
 **3.1 Data Augmentation**
-The data augmentations are implemented using `torchvision.transforms`. Here we define the augmentations as specified by the appendices of the SimCLR paper, these being  
+The data augmentations are implemented using `torchvision.transforms`. Here we define the augmentations as specified by the appendices of the SimCLR paper:
+
+- Randomly cropping and re-sizing to original dimensions
+- Randomly flipping horizontally
+- Applying a colour jitter, this is applying randomly with a probability of 0.8 
+- Finally we change some images to gray scale with a probability of 0.2 and apply a Gaussian blur to 50% of the data.
+
+The implementation of this can be seen below: 
 
 ```python
 from torchvision import transforms
@@ -69,7 +76,6 @@ data_transforms = transforms.Compose([transforms.RandomResizedCrop(size=size),
 								  transforms.RandomGrayscale(p=0.2),
 								  transforms.RandomApply([blur], p=0.5),
 								  transforms.ToTensor()])
-
 ```
 
 
