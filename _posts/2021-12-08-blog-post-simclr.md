@@ -184,6 +184,7 @@ Here it is clear that our embedding is not fuly trained as we are only obtaining
 ![TSNE](/assets/images/tsne.png)
 
 Here it is clear that our model has not learnt enough about the training data to distinguish between classes. 
+:)
 
 5.Conclusions and final remarks
 ======
