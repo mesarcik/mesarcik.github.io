@@ -147,7 +147,7 @@ We then iterate over each batch, calculate the similarities and update the weigh
 |:--:| 
 | *Loss* |
 
-![caption?](../assets/images/los6.png)
+![caption?](/assets/images/los6.png)
 
 
 5.Conclusions and final remarks
