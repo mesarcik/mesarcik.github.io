@@ -183,7 +183,7 @@ Using this partially trained model we apply a linear classifier, and obtain the 
 weighted avg       0.30      0.29      0.28     10000
 ``` 
 
-Here it is clear that our embedding is not fuly trained as we are only obtaining a Top-1 accuracy of 0.29. We investigate this result further by inspecting the 2-dimensional t-SNE embedding of our learnt representations, as can be seen the plot below:
+Here it is clear that our embedding is not fuly trained as we are only obtaining a Top-1 accuracy of 0.29. We investigate this result further by inspecting the 2-dimensional t-SNE embedding of the first 2000 samples of our learnt representations, as can be seen the plot below:
 
 ![TSNE](/assets/images/tsne.png)
 
