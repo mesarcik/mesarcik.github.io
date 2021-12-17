@@ -140,4 +140,13 @@ for i in range(batch_size):
 
 We then iterate over each batch, calculate the similarities and update the weights of the model defined above. For a full overview of the pytorch based implementation please see [the full Github repository](https://github.com/mesarcik/simclr).
 
+4.Intermediate results
+======
+![]()
+| ![space-1.jpg](assets/images/los6.png) | 
+|:--:| 
+| *Loss* |
 
+
+5.Conclusions and final remarks
+======
