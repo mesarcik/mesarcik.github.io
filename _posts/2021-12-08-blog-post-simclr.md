@@ -143,7 +143,7 @@ We then iterate over each batch, calculate the similarities and update the weigh
 4.Intermediate results
 ======
 ![]()
-| ![space-1.jpg](assets/images/los6.png) | 
+| ![space-1.jpg](/assets/images/los6.png) | 
 |:--:| 
 | *Loss* |
 
