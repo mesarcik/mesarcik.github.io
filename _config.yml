@@ -82,14 +82,14 @@ analytics:
 author:
   name             : "Michael Mesarcik"
   avatar           : "profile.png"
-  bio              : "PhD Student at the University of Amsterdam "
+  bio              : "PhD graduate from the University of Amsterdam "
   location         : "Amsterdam, the Netherlands"
   employer         :
   googlescholar    : "https://scholar.google.com/citations?user=TU0tZQgAAAAJ&hl=en"
   email            : "m.mesarcik [at] uva [dot] nl"
   github           : "mesarcik"
   impactstory      : #"https://profiles.impactstory.org/u/xxxx-xxxx-xxxx-xxxx"
-  linkedin         :
+  linkedin         : "https://www.linkedin.com/in/michael-mesarcik-7b3105294/"
   orcid            : "http://orcid.org/0000-0001-9535-9179"
   soundcloud       :
 
