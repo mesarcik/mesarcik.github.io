@@ -2,59 +2,345 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Michael Mesarcik</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Playfair Display', serif;
+      font-size: 14px;
+      line-height: 1.75;
+      background: #faf9f7;
+      color: #1a1a1a;
+      padding: 64px 24px 96px;
+    }
+
+    .container {
+      max-width: 640px;
+      margin: 0 auto;
+    }
+
+    header {
+      margin-bottom: 48px;
+    }
+
+    h1 {
+      font-size: 1.3rem;
+      font-weight: 500;
+      letter-spacing: -0.01em;
+      margin-bottom: 2px;
+    }
+
+    .subtitle {
+      font-size: 0.82rem;
+      font-weight: 300;
+      color: #777;
+      margin-bottom: 16px;
+    }
+
+    .meta {
+      font-size: 0.78rem;
+      font-weight: 300;
+      color: #888;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0;
+    }
+
+    .meta a, .meta span {
+      color: #888;
+      text-decoration: none;
+    }
+
+    .meta a:hover { color: #1a1a1a; }
+
+    .meta-sep {
+      margin: 0 8px;
+      color: #ccc;
+    }
+
+    section {
+      margin-bottom: 40px;
+    }
+
+    h2 {
+      font-size: 0.7rem;
+      font-weight: 400;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #aaa;
+      margin-bottom: 16px;
+    }
+
+    p {
+      font-size: 0.82rem;
+      font-weight: 300;
+      color: #444;
+      max-width: 560px;
+    }
+
+    .entry {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 16px;
+      padding: 10px 0;
+      border-bottom: 1px solid #ebebeb;
+    }
+    .entry:first-child { border-top: 1px solid #ebebeb; }
+
+    .entry-left { flex: 1; }
+
+    .entry-title {
+      font-size: 0.82rem;
+      font-weight: 400;
+      color: #1a1a1a;
+    }
+
+    .entry-sub {
+      font-size: 0.76rem;
+      font-weight: 300;
+      color: #888;
+    }
+
+    .entry-detail {
+      font-size: 0.76rem;
+      font-weight: 300;
+      color: #666;
+      margin-top: 2px;
+    }
+
+    .entry-date {
+      font-size: 0.72rem;
+      font-weight: 300;
+      color: #bbb;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .pub {
+      padding: 10px 0;
+      border-bottom: 1px solid #ebebeb;
+    }
+    .pub:first-child { border-top: 1px solid #ebebeb; }
+
+    .pub a {
+      font-size: 0.82rem;
+      font-weight: 400;
+      color: #1a1a1a;
+      text-decoration: none;
+    }
+    .pub a:hover { text-decoration: underline; }
+
+    .pub-meta {
+      font-size: 0.72rem;
+      font-weight: 300;
+      color: #aaa;
+      margin-top: 1px;
+    }
+
+    .projects {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1px;
+      background: #ebebeb;
+      border: 1px solid #ebebeb;
+    }
+
+    @media (max-width: 480px) {
+      .projects { grid-template-columns: 1fr; }
+    }
+
+    .project {
+      background: #faf9f7;
+      padding: 14px 16px;
+      text-decoration: none;
+      display: block;
+    }
+    .project:hover { background: #f2f0ec; }
+
+    .project-name {
+      font-size: 0.78rem;
+      font-weight: 500;
+      color: #1a1a1a;
+      margin-bottom: 3px;
+    }
+
+    .project-desc {
+      font-size: 0.72rem;
+      font-weight: 300;
+      color: #888;
+      line-height: 1.5;
+    }
+
+    .skills {
+      font-size: 0.76rem;
+      font-weight: 300;
+      color: #666;
+      line-height: 2;
+    }
+
+    .skills span {
+      display: inline-block;
+      border: 1px solid #e0e0e0;
+      padding: 1px 8px;
+      margin: 2px 4px 2px 0;
+      color: #666;
+    }
+
+    footer {
+      margin-top: 56px;
+      font-size: 0.7rem;
+      font-weight: 300;
+      color: #ccc;
+    }
+  </style>
 </head>
 <body>
+<div class="container">
 
-<h1>Michael Mesarcik</h1>
-<p>Applied Machine Learning Scientist</p>
-<p>📍 Amsterdam<br>
-📧 <a href="mailto:mimesarcik@gmail.com">mimesarcik@gmail.com</a><br>
-🔗 <a href="https://github.com/mesarcik">GitHub</a> | <a href="https://www.linkedin.com/in/michael-mesarcik-7b3105294/">LinkedIn</a> |  <a href="https://scholar.google.com/citations?user=TU0tZQgAAAAJ&hl=en=en/">Google Scholar</a>
-</p>
+  <header>
+    <h1>Michael Mesarcik</h1>
+    <p class="subtitle">Machine Learning Researcher &amp; Engineer</p>
+    <div class="meta">
+      <span>Amsterdam</span>
+      <span class="meta-sep">·</span>
+      <a href="https://github.com/mesarcik" target="_blank">GitHub</a>
+      <span class="meta-sep">·</span>
+      <a href="https://www.linkedin.com/in/michael-mesarcik-7b3105294/" target="_blank">LinkedIn</a>
+      <span class="meta-sep">·</span>
+      <a href="https://scholar.google.com/citations?user=TU0tZQgAAAAJ&hl=en" target="_blank">Scholar</a>
+    </div>
+  </header>
 
-<hr>
+  <section>
+    <h2>About</h2>
+    <p>ML researcher with a PhD and experience building production-grade time-series foundation models for forecasting and anomaly detection at scale. I design and deploy real-time ML systems on high-throughput data — from prototyping to production — across energy and radio astronomy.</p>
+  </section>
 
-<h2>About</h2>
-<p>
-I am an applied machine learning scientist with a PhD in anomaly detection for distributed sensing systems. I have experience in both the space and energy sectors, and a strong background in research and production environments.
-</p>
+  <section>
+    <h2>Experience</h2>
 
-<h2>Projects</h2>
-<ul>
-  <li><a href="https://github.com/mesarcik/ROAD">ROAD</a> – Anomaly detection for radio telescopes (PyTorch)</li>
-  <li><a href="https://github.com/mesarcik/RFI-NLN">RFI-NLN</a> – Semantic segmentation for RFI detection (TensorFlow)</li>
-  <li><a href="https://github.com/mesarcik/DL4DI">DL4DI</a> – VAE-based data visualisation for radio telescopes (TensorFlow)</li>
-  <li><a href="https://github.com/mesarcik/REDTOOTH">REDTOOTH</a> – Real-time acoustic data transmission (Java)</li>
-  <li><a href="https://github.com/mesarcik/DRFM">DRFM</a> – Radar signal processing system for a low cost FPGA (Verilog)</li>
+    <div class="entry">
+      <div class="entry-left">
+        <div class="entry-title">Machine Learning Researcher — Alliander</div>
+        <div class="entry-detail">Time-series foundation models for electric grids. 10% improvement in short-term load forecasting. Secured €420K research grant + €100K EuroHPC compute grant.</div>
+      </div>
+      <div class="entry-date">2024–now</div>
+    </div>
 
-</ul>
+    <div class="entry">
+      <div class="entry-left">
+        <div class="entry-title">HPC Teaching Assistant — University of Amsterdam</div>
+        <div class="entry-detail">GPU computing (CUDA, OpenMP), profiling and scaling on HPC clusters.</div>
+      </div>
+      <div class="entry-date">2020–2022</div>
+    </div>
 
-<h2>Education</h2>
-<ul>
-  <li>PhD, Informatics – University of Amsterdam (2019–2024)</li>
-  <li>MSc, Electrical Engineering – University of Cape Town (2017–2018)</li>
-  <li>BSc, Computer Engineering – University of Cape Town (2013–2016)</li>
-</ul>
+    <div class="entry">
+      <div class="entry-left">
+        <div class="entry-title">Data Science Intern — DataProphet</div>
+        <div class="entry-detail">Clustering and monitoring pipelines for industrial sensor data; containerised AWS workflows.</div>
+      </div>
+      <div class="entry-date">2018–2019</div>
+    </div>
 
-<h2>Experience</h2>
-<ul>
-  <li>Machine Learning Researcher – Alliander (2024–Now)</li>
-  <li>Teaching Assistant – University of Amsterdam (2020–2022)</li>
-  <li>Data Science Intern – DataProphet (2018–2019)</li>
-</ul>
+    <div class="entry">
+      <div class="entry-left">
+        <div class="entry-title">Radar Signal Processing Intern — University of Pardubice</div>
+        <div class="entry-detail">Drone detection algorithms for pulse-Doppler surveillance radar.</div>
+      </div>
+      <div class="entry-date">2018</div>
+    </div>
+  </section>
 
-<h2>Selected Publications</h2>
-<ul>
-  <li><a href="https://www.aanda.org/component/article?access=doi&doi=10.1051/0004-6361/202347182">ROAD: The Radio Observatory Anomaly Detector</a> – Astronomy & Astrophysics, 2023</li>
-  <li><a href="https://academic.oup.com/mnras/article/516/4/5367/6692884">Learning to detect RFI without seeing it</a> – MNRAS, 2022</li>
-  <li><a href="https://academic.oup.com/mnras/article/496/2/1517/5848205">DL-assisted data inspection in radio astronomy</a> – MNRAS, 2020</li>
-</ul>
-  
-<h2>Theses</h2>
-<ul>
-  <li><a href="https://pure.uva.nl/ws/files/167729921/Thesis.pdf">Machine learning-based anomaly detection for radio telescopes</a>, 2024</li>
-</ul>
+  <section>
+    <h2>Education</h2>
 
+    <div class="entry">
+      <div class="entry-left">
+        <div class="entry-title">PhD, Informatics — University of Amsterdam</div>
+        <div class="entry-detail">Anomaly detection for radio telescopes at scale using machine learning. <a href="https://pure.uva.nl/ws/files/167729921/Thesis.pdf" target="_blank" style="color:#aaa;font-size:0.72rem;">↗ thesis</a></div>
+      </div>
+      <div class="entry-date">2019–2024</div>
+    </div>
+
+    <div class="entry">
+      <div class="entry-left">
+        <div class="entry-title">MSc, Electrical Engineering — University of Cape Town</div>
+        <div class="entry-sub">Signal processing &amp; remote sensing</div>
+      </div>
+      <div class="entry-date">2017–2018</div>
+    </div>
+
+    <div class="entry">
+      <div class="entry-left">
+        <div class="entry-title">BSc, Computer Engineering — University of Cape Town</div>
+        <div class="entry-sub">Embedded systems &amp; digital signal processing</div>
+      </div>
+      <div class="entry-date">2013–2016</div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Publications</h2>
+
+    <div class="pub">
+      <a href="#">LianderPower: A Decade of Time Series for Covariate-Aware Foundation Models</a>
+      <div class="pub-meta">In press, 2026</div>
+    </div>
+
+    <div class="pub">
+      <a href="https://www.aanda.org/component/article?access=doi&doi=10.1051/0004-6361/202347182" target="_blank">ROAD: The Radio Observatory Anomaly Detector</a>
+      <div class="pub-meta">Astronomy &amp; Astrophysics, 2023</div>
+    </div>
+
+    <div class="pub">
+      <a href="https://academic.oup.com/mnras/article/516/4/5367/6692884" target="_blank">Learning to Detect RFI in Radio Astronomy Without Seeing It</a>
+      <div class="pub-meta">MNRAS, 2022</div>
+    </div>
+
+    <div class="pub">
+      <a href="https://academic.oup.com/mnras/article/496/2/1517/5848205" target="_blank">Deep Learning Assisted Data Inspection for Radio Astronomy</a>
+      <div class="pub-meta">MNRAS, 2020</div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Projects</h2>
+    <div class="projects">
+      <a class="project" href="https://github.com/alliander-opensource/s4casting" target="_blank">
+        <div class="project-name">s4casting</div>
+        <div class="project-desc">Multi-resolution forecasting for electrical grids via structured state space models</div>
+      </a>
+      <a class="project" href="https://github.com/mesarcik/ROAD" target="_blank">
+        <div class="project-name">ROAD</div>
+        <div class="project-desc">Self-supervised anomaly detection for radio observatory pipelines</div>
+      </a>
+      <a class="project" href="https://github.com/mesarcik/RFI-NLN" target="_blank">
+        <div class="project-name">RFI-NLN</div>
+        <div class="project-desc">Autoencoder-based interference detection in radio spectra</div>
+      </a>
+      <a class="project" href="https://github.com/mesarcik/DL4DI" target="_blank">
+        <div class="project-name">DL4DI</div>
+        <div class="project-desc">VAE-based data quality inspection for radio telescopes</div>
+      </a>
+    </div>
+  </section>
+
+  <section>
+    <h2>Skills</h2>
+    <div class="skills">
+      <span>PyTorch</span><span>TensorFlow</span><span>Python</span><span>CUDA</span><span>HPC / SLURM</span><span>AWS</span><span>GCP</span><span>Docker</span><span>MLOps</span><span>Time series</span><span>Anomaly detection</span><span>Generative models</span>
+    </div>
+  </section>
+
+  <footer>Amsterdam, 2026</footer>
+
+</div>
 </body>
 </html>
